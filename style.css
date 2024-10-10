@@ -337,3 +337,13 @@ ol.static-org-chart .staff_card + div {
         top: 0;
     }
  }
+
+ @media (max-width: 1200px) {
+    ol.static-org-chart #second:before {
+        height: 13em!important;
+        left: 0%!important;
+        top: -12em !important;
+        width: 3px!important;
+   }
+    
+ }
