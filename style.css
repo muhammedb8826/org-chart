@@ -3,9 +3,7 @@
     margin: 0;
     padding: 0;
 }
-body {
-    font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
-}
+
 #wrapper {
     margin-left: auto;
     margin-right: auto;
@@ -38,6 +36,21 @@ ol.static-org-chart ol:before, ol.static-org-chart ol:after, ol.static-org-chart
 ol.static-org-chart ol > li {
     padding: 1em 0 0 1em;
 }
+
+/* the last card dragged to the left */
+
+ol.static-org-chart ol > li:nth-child(4) {
+    left: -200px;
+}
+
+ol.static-org-chart ol > li:nth-child(4)::after {
+    background-color: #b3ff66;
+    content: '';
+    position: absolute;
+    width: 305px!important;
+    transform: translateX(-45%);
+}
+
 ol.static-org-chart > li ol:before {
     height: 1em;
     left: 50%;
@@ -121,15 +134,19 @@ ol.static-org-chart #second:before {
 }
 
 ol.static-org-chart #first > li > div {
-    height: 200px!important;
+    height: 300px!important;
     width: 300px!important;
     color: #fff;
-    left: 25%;
+    left: 15%;
     background-color: #000053;
 }
 
 ol.static-org-chart #first > #zIndexed {
     z-index: 100;
+}
+
+ol.static-org-chart #first > #visibility-hidden {
+    visibility: hidden;
 }
 
 .title {
@@ -139,8 +156,6 @@ ol.static-org-chart #first > #zIndexed {
     margin-bottom: 10px;
     color: white;
 }
-
-
 ol.static-org-chart #first > li > div > div {
     position: relative;
     top: 50%;
@@ -251,7 +266,6 @@ ol.static-org-chart #first > li > div > div {
         top: 0;
         width: 100%;
    }
-
     ol.static-org-chart #first > li > div {
         height: 80px;
         width: 200px;
@@ -273,38 +287,12 @@ ol.static-org-chart .staff_card {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 ol.static-org-chart .staff_title {
-    height: 50px;
+    height: 75px;
     text-align: center;
     background-color: #000053;
     color: #FFF;
     padding: 10px;
     font-weight: bold;
-}
-ol.static-org-chart .staff_info {
-    height: 80px;
-    padding: 5px;
-}
-ol.static-org-chart .staff_image img {
-    border-radius: 100px;
-    width: 70px;
-}
-ol.static-org-chart .staff_image {
-    float: left;
-    width: 30%;
-}
-ol.static-org-chart .staff_name_container {
-    padding-top: 15px;
-    float: right;
-    width: 60%;
-}
-ol.static-org-chart .staff_name_label {
-    color: #000053;
-    font-size: 16px;
-    text-align: left;
-}
-ol.static-org-chart .staff_name {
-    font-size: 14px;
-    text-align: left;
 }
 ol.static-org-chart #second > li > div:not(:first-child) {
     height: 60px;
@@ -330,20 +318,45 @@ ol.static-org-chart .staff_card + div {
     margin-top: 10px;
 }
 
- @media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1200px) {
     ol.static-org-chart #first > li > div {
         position: relative;
         left: 0;
         top: 0;
     }
- }
+}
 
- @media (max-width: 1200px) {
+ol.static-org-chart #second:before {
+    height: 20.6em!important;
+    left: 55%!important;
+    top: -19.6em !important;
+    width: 3px!important;
+}
+
+@media (max-width: 1200px) {
     ol.static-org-chart #second:before {
-        height: 13em!important;
+        height: 19em!important;
         left: 0%!important;
-        top: -12em !important;
+        top: -18em !important;
         width: 3px!important;
    }
+
+   ol.static-org-chart #first > #visibility-hidden {
+    display: none;
+}
+
+/* the last card dragged to the left */
+
+ol.static-org-chart ol > li:nth-child(4) {
+    left: 0;
+}
+
+ol.static-org-chart ol > li:nth-child(4)::after {
+    background-color: #b3ff66;
+    content: '';
+    position: absolute;
+    width: 3px!important;
+    transform: translateX(0%);
+}
     
- }
+}
